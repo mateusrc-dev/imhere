@@ -6,7 +6,11 @@ export function Home() {
   // App é a função padrão que vai ser iniciada no nosso app
   // no JSX um componente é uma interface e também é uma função que tem um retorno onde fica os elementos que serão exibidos em tela
   function handleParticipantAdd() {
-    console.log("vá se lascar!");
+    console.log("você clicou em adicionar! hahaha'");
+  }
+
+  function handleParticipantRemove(name: string) {
+    console.log(`você clicou em remover o participante ${name}`);
   }
 
   return (
@@ -29,9 +33,9 @@ export function Home() {
         </TouchableOpacity>
       </View>
 
-      <Participant />
-      <Participant />
-      <Participant />
+      <Participant name="Mateus Carvalho" onRemove={handleParticipantRemove} />
+      <Participant name="Gustavo" onRemove={handleParticipantRemove} />
+      <Participant name="Pedro" onRemove={handleParticipantRemove} />
     </View>
   );
 }
