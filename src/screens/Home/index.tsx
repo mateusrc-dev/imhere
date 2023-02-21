@@ -1,10 +1,29 @@
-import { Text, View, TextInput, TouchableOpacity } from "react-native"; // esse elemento é nativo do react-native que é específico para contexto mobile - View é como se fosse uma div
+import {
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native"; // esse elemento é nativo do react-native que é específico para contexto mobile - View é como se fosse uma div
 import { Participant } from "../../components/Participant";
 import { styles } from "./styles";
 
 export function Home() {
   // App é a função padrão que vai ser iniciada no nosso app
   // no JSX um componente é uma interface e também é uma função que tem um retorno onde fica os elementos que serão exibidos em tela
+
+  const participants = [
+    "Mateus",
+    "Pedro",
+    "Gustavo",
+    "Diego",
+    "Isa",
+    "Camila",
+    "Fernanda",
+    "Luana",
+    "Luciana",
+  ];
+
   function handleParticipantAdd() {
     console.log("você clicou em adicionar! hahaha'");
   }
@@ -32,10 +51,16 @@ export function Home() {
           {/*temos que colocar o elemento Text para não dar erro*/}
         </TouchableOpacity>
       </View>
-
-      <Participant name="Mateus Carvalho" onRemove={handleParticipantRemove} />
-      <Participant name="Gustavo" onRemove={handleParticipantRemove} />
-      <Participant name="Pedro" onRemove={handleParticipantRemove} />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {/*ScrollView elemento ativa a rolagem*/}
+        {participants.map((participant) => (
+          <Participant
+            key={participant}
+            name={participant}
+            onRemove={handleParticipantRemove}
+          />
+        ))}
+      </ScrollView>
     </View>
   );
 }
