@@ -3,7 +3,7 @@ import {
   View,
   TextInput,
   TouchableOpacity,
-  ScrollView,
+  FlatList,
 } from "react-native"; // esse elemento é nativo do react-native que é específico para contexto mobile - View é como se fosse uma div
 import { Participant } from "../../components/Participant";
 import { styles } from "./styles";
@@ -37,7 +37,6 @@ export function Home() {
     <View style={styles.container}>
       <Text style={styles.eventName}>Nome do evento</Text>
       <Text style={styles.eventDate}>Sexta, 4 de Novembro de 2022</Text>
-
       <View style={styles.form}>
         <TextInput
           style={styles.input}
@@ -51,16 +50,24 @@ export function Home() {
           {/*temos que colocar o elemento Text para não dar erro*/}
         </TouchableOpacity>
       </View>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        {/*ScrollView elemento ativa a rolagem*/}
-        {participants.map((participant) => (
+      <FlatList
+        data={participants} // não precisamos usar o map, aqui em data passamos o nosso array
+        keyExtractor={(item) => item} // extraindo key
+        renderItem={({ item }) => (
           <Participant
-            key={participant}
-            name={participant}
+            key={item}
+            name={item}
             onRemove={handleParticipantRemove}
           />
-        ))}
-      </ScrollView>
+        )}
+        showsVerticalScrollIndicator={false}
+        ListEmptyComponent={() => ( // é o que vai ser renderizado caso a listagem (o array) esteja vazia
+          <Text style={styles.listEmptyText}>
+            Ninguém chegou no evento ainda? Adicione participantes a sua lista
+            de presença!
+          </Text>
+        )}
+      />
     </View>
   );
 }
