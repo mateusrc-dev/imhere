@@ -4,6 +4,7 @@ import {
   TextInput,
   TouchableOpacity,
   FlatList,
+  Alert,
 } from "react-native"; // esse elemento é nativo do react-native que é específico para contexto mobile - View é como se fosse uma div
 import { Participant } from "../../components/Participant";
 import { styles } from "./styles";
@@ -25,11 +26,26 @@ export function Home() {
   ];
 
   function handleParticipantAdd() {
-    console.log("você clicou em adicionar! hahaha'");
+    if (participants.includes("Mateus")) {
+      return Alert.alert(
+        "Participante existe!",
+        "Já existe um participante na lista com esse nome."
+      );
+    }
   }
 
   function handleParticipantRemove(name: string) {
-    console.log(`você clicou em remover o participante ${name}`);
+    Alert.alert("Remover", `Remover o participante ${name}?`, [
+      // array para definir os botões
+      {
+        text: "Sim",
+        onPress: () => Alert.alert("Deletado!"), // o que vai ocorrer caso esse botão seja pressionado
+      },
+      {
+        text: "Não",
+        style: 'cancel',
+      },
+    ]);
   }
 
   return (
@@ -61,7 +77,8 @@ export function Home() {
           />
         )}
         showsVerticalScrollIndicator={false}
-        ListEmptyComponent={() => ( // é o que vai ser renderizado caso a listagem (o array) esteja vazia
+        ListEmptyComponent={() => (
+          // é o que vai ser renderizado caso a listagem (o array) esteja vazia
           <Text style={styles.listEmptyText}>
             Ninguém chegou no evento ainda? Adicione participantes a sua lista
             de presença!
