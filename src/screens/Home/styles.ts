@@ -20,9 +20,9 @@ export const styles = StyleSheet.create({
   input: {
     flex: 1, // para ocupar o máximo de espaço possível
     height: 56,
-    backgroundColor: '#1F1E25',
+    backgroundColor: "#1F1E25",
     borderRadius: 5,
-    color: '#FFF',
+    color: "#FFF",
     padding: 16,
     fontSize: 16,
     marginRight: 12,
@@ -31,17 +31,17 @@ export const styles = StyleSheet.create({
     width: 56,
     height: 56,
     borderRadius: 5,
-    backgroundColor: '#31CF67',
-    alignItems: 'center', // o flexbox já está ativado
-    justifyContent: 'center',
+    backgroundColor: "#31CF67",
+    alignItems: "center", // o flexbox já está ativado
+    justifyContent: "center",
   },
   buttonText: {
-    color: '#FFF',
-    fontSize: 24
+    color: "#FFF",
+    fontSize: 24,
   },
   form: {
-    width: '100%',
-    flexDirection: 'row', // por padrão no react-native o flexDirection é column
+    width: "100%",
+    flexDirection: "row", // por padrão no react-native o flexDirection é column
     marginTop: 36,
     marginBottom: 42,
   },

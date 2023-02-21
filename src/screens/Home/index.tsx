@@ -1,4 +1,5 @@
 import { Text, View, TextInput, TouchableOpacity } from "react-native"; // esse elemento é nativo do react-native que é específico para contexto mobile - View é como se fosse uma div
+import { Participant } from "../../components/Participant";
 import { styles } from "./styles";
 
 export function Home() {
@@ -27,6 +28,10 @@ export function Home() {
           {/*temos que colocar o elemento Text para não dar erro*/}
         </TouchableOpacity>
       </View>
+
+      <Participant />
+      <Participant />
+      <Participant />
     </View>
   );
 }
