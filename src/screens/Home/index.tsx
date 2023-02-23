@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Text,
   View,
@@ -13,21 +14,16 @@ export function Home() {
   // App é a função padrão que vai ser iniciada no nosso app
   // no JSX um componente é uma interface e também é uma função que tem um retorno onde fica os elementos que serão exibidos em tela
 
-  const participants = [
-    "Mateus",
-    "Pedro",
-    "Gustavo",
-    "Diego",
-    "Isa",
-  ];
+  const [participants, setParticipants] = useState(['Mateus']);
 
   function handleParticipantAdd() {
-    if (participants.includes("Mateus")) {
+    if (participants.includes("Lucas")) {
       return Alert.alert(
         "Participante existe!",
         "Já existe um participante na lista com esse nome."
       );
     }
+    setParticipants((state) => [...state, "Pedro"]);
   }
 
   function handleParticipantRemove(name: string) {
@@ -39,7 +35,7 @@ export function Home() {
       },
       {
         text: "Não",
-        style: 'cancel',
+        style: "cancel",
       },
     ]);
   }
