@@ -14,16 +14,18 @@ export function Home() {
   // App é a função padrão que vai ser iniciada no nosso app
   // no JSX um componente é uma interface e também é uma função que tem um retorno onde fica os elementos que serão exibidos em tela
 
-  const [participants, setParticipants] = useState(['Mateus']);
+  const [participants, setParticipants] = useState<string[]>([]);
+  const [participantName, setParticipantName] = useState<string>("");
 
   function handleParticipantAdd() {
-    if (participants.includes("Lucas")) {
+    if (participants.includes(participantName)) {
       return Alert.alert(
         "Participante existe!",
         "Já existe um participante na lista com esse nome."
       );
     }
-    setParticipants((state) => [...state, "Pedro"]);
+    setParticipants((state) => [...state, participantName]);
+    setParticipantName('')
   }
 
   function handleParticipantRemove(name: string) {
@@ -31,7 +33,7 @@ export function Home() {
       // array para definir os botões
       {
         text: "Sim",
-        onPress: () => Alert.alert("Deletado!"), // o que vai ocorrer caso esse botão seja pressionado
+        onPress: () => setParticipants(state => state.filter(participant => participant !== name)), // o que vai ocorrer caso esse botão seja pressionado - vai ser remotivo o participante dentro de 'name'
       },
       {
         text: "Não",
@@ -50,6 +52,8 @@ export function Home() {
           style={styles.input}
           placeholder="Nome do participante"
           placeholderTextColor="#6B6B6B"
+          onChangeText={(text) => setParticipantName(text)} // podemos colocar apenas setParticipantName dentro ds chaves
+          value={participantName}
         />
 
         <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
