@@ -1,11 +1,11 @@
-# Essa aplicação faz parte da trilha ReactNative do Ignite da Rocketseat que tem o objetivo de apresentar os fundamentos do ReactNative 🚀🚀
+# This application is part of Rocketseat's Ignite ReactNative trail, which aims to present the fundamentals of ReactNative 🚀🚀
 
-## Nessa aplicação criamos uma interface na qual pode ser adicionados participantes de um evento - essa simples aplicação nos ajuda a entender conceitos básicos como componentização, hooks, elementos básicos do react-native (Text, View, ScrollView)
+## In this application we created an interface in which event participants can be added - this simple application helps us understand basic concepts such as componentization, hooks, basic react-native elements (Text, View, ScrollView)
 
-### ➡️ Aprendemos sobre os fundamentos do ReactNative, aprendemos a criar um projeto com Expo onde é mais simples criar o projeto e tem a facilidade de rodar a aplicação direto no dispositivo iphone para ver como ela está ficando - aprendemos a criar o projeto com o managed workflow (automatiza configurações que envolva código nativo)
+### ➡️ We learned about the fundamentals of ReactNative, we learned how to create a project with Expo where it is simpler to create the project and it is easy to run the application directly on the iPhone device to see how it is turning out - we learned how to create the project with managed workflow (automates configurations involving native code)
 
-➡️ Aprendemos a usar elementos fundamentais do react native e entendemos que por padrão a organizações desses elementos é em coluna, caso quisermos - alguns elementos que aprendemos a usar: Text, View, StyleSheet, TouchableOpacity, ScrollView, FlatList, StatusBar etc.
+➡️ We learned to use fundamental elements of react native and we understand that by default the organization of these elements is in columns, if we want - some elements we learned to use: Text, View, StyleSheet, TouchableOpacity, ScrollView, FlatList, StatusBar, etc.
 
-➡️ Também no projeto aprendemos a trabalhar com componentização, hooks (como useState e useEffect)
+➡️ Also in the project we learned how to work with componentization, hooks (such as useState and useEffect)
 
-### Caso desejar testar a aplicação na sua máquina basta baixar o repositório e executar no terminal do repositório o comando "npm run start" com o Android Studio em execução
+### If you want to test the application on your machine, simply download the repository and run the command "npm run start" in the repository terminal with Android Studio running
